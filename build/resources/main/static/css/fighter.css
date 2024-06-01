@@ -1,0 +1,17 @@
+#sns-link-area .sns-link+.sns-link {
+    padding-left: 5px;
+}
+
+#sns-link-area .bi-youtube {
+    color: red;
+}
+#sns-link-area .bi-instagram {
+    color: #ff6838;
+}
+
+#x-embed-anchor {
+    visibility: hidden;
+    top: -59px;
+    position: relative;
+    display: block;
+}

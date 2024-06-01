@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, content)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="RIZIN階級別ランキング、RIZIN選手名簿(レーダーチャート)、メインイベント出場回数ランキング">
+    <title th:replace="${title}">(default title)</title>
+    <link href="../static/img/MMARanks.png" th:href="@{/img/MMARanks.png}" rel="icon" type="image/png" sizes="256x256">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/css/layout.css" th:href="@{/css/layout.css}" rel="stylesheet" >
+    <link th:if="${originalCss}" th:href="${originalCss}" rel="stylesheet">
+</head>
+<body>
+    <!-- ページヘッダー -->
+    <header id="page-header">
+        <!-- ナビゲーションバー -->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+            <div class="container-fluid ms-1 ms-sm-5">
+                <a href="index.html" th:href="@{/}" class="navbar-brand fst-italic">
+                    <img
+                            src="../static/img/MMARanks.svg"
+                            th:src="@{/img/MMARanks.svg}"
+                            alt=""
+                            width="40"
+                            height="30"
+                            class="d-inline-block align-text-top"
+                    />
+                    <span>RIZIN ランキング</span>
+                </a>
+                <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler"
+                >
+                    <!--<span class="navbar-toggler-icon"></span>-->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav ms-auto me-5">
+                        <li class="nav-item">
+                            <a href="index.html"
+                               th:href="@{/}"
+                               class="nav-link" th:class="${activePage == 'home' ? 'nav-link active' : 'nav-link'}"
+                            >ホーム</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./myapp/ranking.html"
+                               th:href="@{/ranking}"
+                               class="nav-link" th:class="${activePage == 'ranking' ? 'nav-link active' : 'nav-link'}"
+                            >ランキング</a>
+                        </li>
+<!--                        <li class="nav-item">-->
+<!--                            <a href="fighters.html"-->
+<!--                               th:href="@{/fighters}"-->
+<!--                               class="nav-link" th:class="${activePage == 'fighters' ? 'nav-link active' : 'nav-link'}">選手名簿</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">
+                            <a href="survey.html"
+                               th:href="@{/survey}"
+                               class="nav-link" th:class="${activePage == 'survey' ? 'nav-link active' : 'nav-link'}">アンケート</a>
+                        </li>-->
+                        <li class="nav-item">
+                            <a href="./issues/creationForm.html"
+                               th:href="@{/issues/creationForm}"
+                               class="nav-link" th:class="${activePage == 'list' ? 'nav-link active' : 'nav-link'}">お問い合わせ</a>
+                        </li>
+                    </ul>
+                    <form id="nav-search-area" class="d-flex position-relative" role="search">
+                        <input id="search-input" class="form-control" type="search" placeholder="選手名を検索" aria-label="Search" autocomplete="off">
+                        <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
+                        <div id="search-results" class="dropdown-menu"></div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="main-content" th:insert="${content}"></div>
+
+    <!-- ページフッター -->
+    <footer id="page-footer" class="bg-dark text-white text-center p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>Copyright @ 2023 s.t...bonjin engineer.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- modal -->
+    <div th:insert="fragments/closeOnlyModal :: modalFragment"></div>
+
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script th:if="${useChartJs}" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../static/js/layout.js" th:src="@{/js/layout.js}"></script>
+    <script src="../static/js/common.js" th:src="@{/js/common.js}"></script>
+    <script th:if="${originalJs}" th:src="${originalJs}"></script>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}"
+>
+  <head>
+    <title>RIZIN ランキング | トップページ</title>
+  </head>
+  <body>
+    <div>
+      <!-- メイン -->
+      <main>
+        <!-- サービススライド -->
+        <section id="service-slide">
+          <div
+            id="carouselExampleCaptions"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <!--<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>-->
+            </div>
+
+            <div class="carousel-inner">
+                
+              <!-- 超RIZIN.3 -->
+              <div class="carousel-item active">
+                <div class="img-container">
+                  <img src="https://d1uzk9o9cg136f.cloudfront.net/f/16782696/rc/2024/03/16/785a8068411f2805039cfe1a142275bc9b633cd4_xlarge.jpg" class="d-block" alt="..."/>
+                </div>
+                <div class="carousel-caption text-start">
+                  <h2 class="display-4 fw-bold fst-italic" style="color:pink; "></h2>
+                  <p class="lead fst-italic fw-bold"></p>
+                  <a href="./myapp/event.html" th:href="@{/event/66}" class="btn btn-danger btn-lg">大会情報</a>
+                </div>
+              </div>
+              <!-- RIZIN.46 -->
+              <div class="carousel-item">
+                <div class="img-container">
+                  <img src="https://d1uzk9o9cg136f.cloudfront.net/f/16782696/rc/2024/03/15/51534734aae0fcaf5c320db154e2864eb1d429f2_xlarge.jpg" class="d-block" alt="..."/>
+                </div>
+                <div class="carousel-caption text-start">
+                  <h2 class="display-4 fw-bold fst-italic" style="color:pink; "></h2>
+                  <p class="lead fst-italic fw-bold"></p>
+                  <a href="./myapp/event.html" th:href="@{/event/65}" class="btn btn-danger btn-lg">大会情報</a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="img-container">
+                  <img src="../static/img/SSA.jpg" th:src="@{/img/SSA.jpg}" class="d-block w-100" alt="..."/>
+                </div>
+                <div class="carousel-caption text-start">
+                  <h2 class="display-4 fw-bold fst-italic" style="color:pink; ">RIZINランキング</h2>
+                  <p class="lead fst-italic fw-bold">
+                    ポイントランキング、P4Pランキング、etc.
+                  </p>
+                  <a href="./myapp/ranking.html" th:href="@{/ranking}" class="btn btn-primary btn-lg">詳細を見る</a>
+                </div>
+              </div>
+
+<!--              <div class="carousel-item">
+                <div class="img-container">
+                  <img src="https://source.unsplash.com/Z_7-0kR28wQ/700x450" class="d-block w-100" alt="..."/>
+                </div>
+                <div class="carousel-caption text-end">
+                  <h2 class="display-4 fw-bold fst-italic">アンケート</h2>
+                  <p class="lead fst-italic fw-bold">
+                    見たいカード、ベストバウト、etc.
+                  </p>
+                  <a href="./myapp/survey.html" th:href="@{/survey}" class="btn btn-success btn-lg">詳細を見る</a>
+                </div>
+              </div>-->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </section>
+
+        <!--サービス一覧-->
+        <section id="service-list">
+          <div class="container py-5">
+            <div class="row">
+              <!-- サービス１ -->
+              <div class="col-md-4">
+                <a href="./myapp/ranking.html" th:href="@{/ranking}" class="text-decoration-none">
+                  <div class="card">
+                    <div class="card-body">
+                      <img
+                        src="../static/img/SSA.jpg" th:src="@{/img/SSA.jpg}"
+                        class="card-img-top img-fluid mb-3"
+                      />
+                      <h2 class="card-title fst-italic">RIZINランキング</h2>
+                      <p class="card-text">
+                        ポイントランキング、P4Pランキング、etc.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- サービス２ -->
+              <div class="col-md-4">
+                <a href="./myapp/ranking.html" th:href="@{/ranking/p4p}" class="text-decoration-none">
+                  <div class="card">
+                    <div class="card-body">
+                      <img
+                        src="../static/img/syara.jpg"
+                        th:src="@{/img/syara.jpg}"
+                        class="card-img-top img-fluid mb-3"
+                      />
+                      <h2 class="card-title fst-italic">P4Pランキング</h2>
+                      <p class="card-text">パウンドフォーパウンド</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- サービス３ -->
+              <div class="col-md-4">
+                <a href="./myapp/ranking.html" th:href="@{/ranking/fightcnt}" class="text-decoration-none">
+                  <div class="card">
+                    <div class="card-body">
+                      <img
+                        src="https://source.unsplash.com/Z_7-0kR28wQ/700x450"
+                        class="card-img-top img-fluid mb-3"
+                      />
+                      <h2 class="card-title fst-italic">出場回数ランキング</h2>
+                      <p class="card-text">出場回数ランキング</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 説明 -->
+        <section id="corp-desc">
+          <div class="container p-5">
+            <div class="row">
+              <div class="col">
+                <h1 class="fst-italic pt-5">
+                  Catch the fighting trends here!<br />MMA Ranks.
+                </h1>
+                <p class="d-md-block">
+                  We aim to be the best comprehensive martial arts website in
+                  Japan
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 大会情報 -->
+        <section id="event-list">
+          <div class="container p-5">
+            <h2>大会情報</h2>
+            <hr/>
+            <div class="row">
+
+              <div class="col-md-4 mb-3" th:each="event: ${eventList}">
+                <a href="#" th:href="@{'/event/' + ${event.eventId}}" class="text-decoration-none">
+                  <div class="card">
+                    <div class="card-body">
+                      <img
+                        th:src="${event.eventImgUrl}"
+                        class="card-img-top img-fluid img-thumbnail mb-3"
+                      />
+                      <h4 class="card-title fst-italic" th:text="${event.eventName}">(eventName)</h4>
+                      <h6 class="card-title fst-italic" th:text="${event.eventYmd}">(eventYmd)</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </main>
+
+    </div>
+  </body>
+</html>
