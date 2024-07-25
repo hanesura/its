@@ -1,8 +1,9 @@
-# Compiled class file
+# Compiled class files
 *.class
 
-# Log file
+# Log files
 *.log
+log/
 
 # BlueJ files
 *.ctxt
@@ -19,10 +20,79 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
 
+# Directories
+bin/
+tmp/
+temp/
+target/
+build/
+out/
+
+# IntelliJ IDEA files
+*.iml
+.idea/
+*.iws
+*.ipr
+
+# NetBeans files
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Eclipse files
+.metadata/
+*.log
+*.tmp
+*.bak
+*.swp
+*~.nib
+.localhistory/
+.classpath
+.project
+.settings/
+
+# VS Code files
+.vscode/
+
 # Gradle files
 .gradle/
-build/
+.gradle/*
+
+# Maven files
+target/
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+
+# Linux files
+*~
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+spring.log
+
+# Application-specific files
+.sass-cache/
+.envrc
+
+# OS generated files
+.DS_Store
+Thumbs.db
