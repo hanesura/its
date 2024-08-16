@@ -21,7 +21,7 @@ public class IndexService {
         this.accessLogRepository = accessLogRepository;
     }
 
-    @Transactional
+//    @Transactional
     public void InsertLog(HttpServletRequest request) {
         String ipAddress = request.getHeader("X-Forwarded-For");
         String userAgentString = request.getHeader("User-Agent");
