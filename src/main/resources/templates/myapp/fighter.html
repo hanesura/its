@@ -21,7 +21,7 @@
                                 <h2 class="card-title" th:text="${fighter.age}">(年齢)</h2>
                             </div>
                             <div>
-                                <span class="badge bg-primary rounded-pill"
+                                <span class="badge bg-primary rounded-pill fs-4"
                                       th:utext="${fighter.point}+' &lt;i class=&quot;bi bi-p-circle-fill&quot;&gt;&lt;/i&gt; '">(Point)
                                 </span>
                             </div>
@@ -82,10 +82,12 @@
                     <span th:text="${item.methodName}"></span>
                     <span th:text="${item.fightDay}"></span>
                     <a href="./event.html" th:href="@{/event/{eventId}(eventId=${item.eventId})}">
-                        <span th:text="${item.eventName}"></span>
+                        <span>
+                        [<span th:text="${item.eventName}"></span>]
+                        </span>
                     </a>
                     <span th:text="${item.mainOrSemi}"></span>
-                    <span>vs </span>
+                    <span class="ps-2"> vs </span>
                     <a href="./fighter.html" th:href="@{/fighter/{fighterId}(fighterId=${item.vsFighterId})}">
                         <span th:text="${item.vsFighterName}"></span>
                     </a>
